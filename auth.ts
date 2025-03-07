@@ -23,7 +23,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           .limit(1);
 
         if (user.length === 0) {
-          console.log("❌ No user found with this email:", credentials.email);
           return null;
         }
 
@@ -33,8 +32,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         );
 
         if (!isPasswordValid) {
-          console.log("hashPassword", user[0].password);
-          console.log("Password is not Valid");
           return null;
         }
 

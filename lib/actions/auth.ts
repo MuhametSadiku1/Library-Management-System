@@ -5,7 +5,6 @@ import { users } from "@/database/schema";
 import { db } from "@/database/drizzle";
 import { hash } from "bcryptjs";
 import { signIn } from "@/auth";
-import { error } from "console";
 import { headers } from "next/headers";
 import ratelimit from "@/lib/ratelimit";
 import { redirect } from "next/navigation";
@@ -33,7 +32,6 @@ export const signInWithCredentials = async (
 
     return { success: true };
   } catch (error) {
-    console.log(error, "Signin error");
     return { success: false, error: "Signin error" };
   }
 };
@@ -72,7 +70,6 @@ export const signUp = async (params: AuthCredentials) => {
 
     return { success: true };
   } catch (error) {
-    console.log(error, "Signup error");
     return { success: false, error: "Signup error" };
   }
 };
