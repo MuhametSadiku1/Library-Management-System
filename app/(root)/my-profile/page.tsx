@@ -4,7 +4,7 @@ import { signOut } from "@/auth";
 import BookList from "@/components/BookList";
 import { sampleBooks } from "@/constants";
 
-const page = () => {
+const Page = () => {
   return (
     <>
       <form
@@ -21,4 +21,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
