@@ -42,6 +42,7 @@ interface Props {
   folder: string;
   variant: "dark" | "light";
   onFileChange: (filePath: string) => void;
+  value?: string;
 }
 
 const ImageUpload = ({
@@ -51,9 +52,12 @@ const ImageUpload = ({
   folder,
   variant,
   onFileChange,
+  value,
 }: Props) => {
   const ikUploadRef = useRef(null);
-  const [file, setFile] = useState<{ filePath: string } | null>(null);
+  const [file, setFile] = useState<{ filePath: string | null }>({
+    filePath: value ?? null,
+  });
   const [progress, setProgress] = useState(0);
 
   const styles = {
